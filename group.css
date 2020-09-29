@@ -1,0 +1,143 @@
+@font-face {
+    font-family: "Source Sans Pro";
+    src: url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+  }
+
+html {
+    height: 100%;
+  }
+
+body {
+    font-family: Source Sans Pro, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 100%;
+    line-height: 1.4;
+    color: #00263B;
+    background-color: #f6f6fe;
+    overflow: hidden;
+    margin:0;
+}
+
+#svgcontainer {
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+    height: 65.199mm;
+}
+
+#machinecontainer {
+    position: absolute;
+    width: 100%;
+}
+
+#grindercontainer {
+    position: absolute;
+    width: 100%;
+    transform:  translateX(100%);
+}
+
+.slide-in {
+    animation: slide-in 1s forwards;
+    -webkit-animation: slide-in 1s forwards;
+}
+
+.slide-out {
+    animation: slide-out 1s forwards;
+    -webkit-animation: slide-out 1s forwards;
+}
+
+@keyframes slide-in {
+    100% { transform: translateX(0%); }
+}
+
+@-webkit-keyframes slide-in {
+    100% { -webkit-transform: translateX(0%); }
+}
+    
+@keyframes slide-out {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+}
+
+@-webkit-keyframes slide-out {
+    0% { -webkit-transform: translateX(0%); }
+    100% { -webkit-transform: translateX(-100%); }
+}
+
+button#next {
+    visibility:hidden;
+    background-color: #36394D;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 0;
+    font-size: .875rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    text-transform: uppercase;
+    height: 40px;
+    padding: 0 16px;
+    font-family: Source Sans Pro;
+    float: right;
+}
+
+#questionnumber {
+    font-size: .75rem;
+    font-weight: 400;
+    line-height: 1rem;
+    text-transform: uppercase;
+    display: block;
+    margin: 0 0 .5rem;
+    color: #6F7282;
+}
+
+#question {
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    display: block;
+    margin: 0 0 1.5rem;
+}
+
+#display {
+    background-color: #F2F3F5;
+    border-color: #CACCD6;
+    color: #36394D;
+    margin: 32px 0 0;
+    padding: 24px;
+    border-width: 1px;
+    border-radius: 2px;
+    border-style: solid;
+    visibility: hidden;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+}
+
+#nav {
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 24px;
+    font-size: 0;
+    text-align: right;
+}
+
+@keyframes highlight {
+    0% {
+      fill: red;
+    }
+    100% {
+      fill: transparent;
+    }
+}
+  
+path.clicked {
+    animation: highlight 1s;
+}
+
+svg {
+    pointer-events: visible;
+}
